@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travela - Booking</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pageheader.css">
+
+</head>
+
+
+<body>
+
+<!--=====================Navbar==============================-->
+ <div class=" login-bar container-fluid bs-pr px-5 d-none d-lg-block">
+        <div class="login-bar-content d-flex justify-content-between py-2">
+          <div class="social-icons-nav d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"> <i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"> <i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"> <i class="fa-brands fa-youtube"></i></a>
+          </div>
+ 
+
+
+        <div class="register d-flex gap-2">
+          <a href="#" class="text-decoration-none">
+            <i class="fa-solid fa-user"></i>
+            Register
+          </a>
+          <a href="#" class="text-decoration-none">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Login
+          </a>
+
+          <a href="#" class="text-decoration-none">
+            <i class="fa-solid fa-home"></i>
+            <div class="dropdown">
+              <a class=" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                My Dashboard
+              </a>
+              <ul class="dropdown-menu dropdown-menu-light">
+                <li><a class="dropdown-item active" href="#"><i class="fa-solid fa-user"></i> My Profile</a>
+                </li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-message"></i></i> Inbox</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
+                </li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i></i> Account
+                    Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-power-off me-2"></i> Log out</a></li>
+              </ul>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  <nav class="navbar navbar-expand-lg navbar-scroll p-0 flex-column mt-5">
+  <div class="container-fluid navbar-item-wrapper d-flex justify-content-between align-items-center px-4">
+    <a class="navbar-brand" href="#">
+      <h1 class="m-0"><i class="fa-solid fa-location-dot"></i> Travela</h1>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="packages.html">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="booking.html">Blog</a>
+        </li>
+
+        <li class="nav-item nav-dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Pages
+          </a>
+          <ul class="nav-dropdown-menu dropdown-menu">
+            <li><a class="nav-dropdown-item text-decoration-none d-block" href="destination.html">Destination</a></li>
+            <li><a class="nav-dropdown-item text-decoration-none d-block" href="tour.html">Explore Tour</a></li>
+            <li><a class="nav-dropdown-item text-decoration-none d-block" href="booking.html">Travel Booking</a></li>
+            <li><a class="nav-dropdown-item text-decoration-none d-block" href="gallery.html">Our Gallery</a></li>
+            <li><a class="nav-dropdown-item text-decoration-none d-block" href="gallery.html">Travel Guides</a></li>
+            <li><a class="nav-dropdown-item text-decoration-none d-block" href="Testimonial.html">Testimonial</a></li>
+            <li><a class="nav-dropdown-item text-decoration-none d-block" href="error404.html">404 Page</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <a href="#" class="btn theme-btn book-now rounded-5 mx-3 px-4 py-2">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!--===========================================================-->
+
+<header>
+    <div class="container text-white h-100 d-flex flex-column justify-content-center align-items-center">
+   
+        <h1 class="text-center mb-3 page-name">Online Booking</h1>
+        <p><a href="index.html" class="text-decoration-none cateory">Home</a> / <a href="#" class="text-decoration-none cateory"> Pages</a> / Online Booking </p>
+
+        
+    </div>
+</header>
+
+    <section class="booking container-fluid position-relative">
+
+      <div class="container d-flex gap-4">
+        <div class="row">
+          <div class="online-booking-infos d-flex flex-column gap-2 p-4 col-lg-6 col-sm-12 col-md-12">
+            <h3 class=" booking-title text-uppercase position-relative text-white fs-5">
+              booking
+            </h3>
+            <h2 class="booking-subtitle text-white">Online Booking</h2>
+            <p class="disc text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis
+              accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat
+              doloribus quasi quo iure officia.
+            </p>
+            <p class="disc text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis
+              accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat
+              doloribus quasi quo iure officia.
+
+            </p>
+            <a href="" class="btn bg-body bg rounded-pill text-primary">Read more</a>
+          </div>
+
+          <div class="booking-form col-lg-6 col-sm-12 col-md-12 p-4">
+            <h2 class="booking-tour-deals text-white">Book A Tour Deals</h2>
+            <p class="text-light">Get <span class="discount-text"> 50% Off</span> On Your First Adventure Trip With
+              Travela. Get More Deal Offers Here.</p>
+
+            <form action="">
+              <div class="row g-3">
+                <!-- Row 1 -->
+                <div class="col-12 col-lg-6">
+                  <input type="text" class="form-control p-3 rounded-2" name="full_name" id="full_name"
+                    placeholder="Your Name">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <input type="email" class="form-control p-3 rounded-2" name="email" id="email"
+                    placeholder="Your Email">
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-12 col-lg-6">
+                  <input type="tel" class="form-control p-3 rounded-2" name="phone" id="phone" placeholder="Your Phone">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <select id="destination_1" name="destination_1" class="form-select p-3 rounded-2">
+                    <option value="" disabled selected>Select Destination</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="col-12 col-lg-6">
+                  <select id="destination_2" name="destination_2" class="form-select p-3 rounded-2">
+                    <option value="" disabled selected>Select Car Model</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <select id="destination_3" name="destination_3" class="form-select p-3 rounded-2">
+                    <option value="" disabled selected>Select Service</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="col-12">
+                  <textarea name="special_request" id="special_request" class="form-control p-3 rounded-2" rows="4"
+                    placeholder="Special Request"></textarea>
+                </div>
+                <div class="col-12">
+                  <input type="submit" value="Book Now" class="theme-btn btn w-100">
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-----------Contant Section-------->
+        <section class="contact position-relative " id="contact">
+
+      <div class="container text-white">
+        <h3
+          class="section-title text-center text-uppercase text-white d-flex w-100 align-items-center justify-content-center gap-3 mb-2 ">
+          Subscribe
+        </h3>
+        <h2 class="text-center mb-4">Our Newsletter</h2>
+        <p class="section-disc text-center text-white mb-5 px-4 w-75 mx-auto small">Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt
+          eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.</p>
+
+        <div class="p-4 border-0 rounded-pill w-75 mx-auto">
+          <form>
+            <div class="position-relative d-flex align-items-center">
+              <input class="form-control z-2 rounded-pill py-3 ps-4 pe-5 border-0 shadow-sm" type="email"
+                placeholder="your email" style="padding-right: 120px;" />
+              <button class="btn z-3 rounded-pill px-4 py-2 position-absolute end-0 me-2 fw-semibold theme-btn"
+                type="submit">
+                Email
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- =====================FOOOTER==================---->
+   <footer>
+  <div class="container">
+    <div class="row g-4">
+      
+      <div class="get-in-touch col-lg-3 col-md-6 col-12 d-flex flex-column">
+        <h5 class="mb-4">Get In Touch</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2 p-0">
+          <li class="d-flex align-items-center"><i class="fas fa-home me-2"></i>123 Street, New York, USA</li>
+          <li class="d-flex align-items-center"><i class="fas fa-envelope me-2"></i>info@example.com</li>
+          <li class="d-flex align-items-center"><i class="fas fa-phone me-2"></i>+01234567890</li>
+          <li class="d-flex align-items-center"><i class="fas fa-print me-2"></i>+01234567890</li>
+
+          <div class=" d-flex align-items-center gap-2 mt-2">
+            <i class="fas fa-share me-2 fs-5 "></i>
+            <i class="icon fab fa-facebook-f"></i>
+            <i class="icon fab fa-twitter"></i>
+            <i class="icon fab fa-instagram"></i>
+            <i class="icon fab fa-linkedin-in"></i>
+          </div>
+        </ul>
+      </div>
+
+      <div class="company col-lg-3 col-md-6 col-12 d-flex flex-column">
+        <h5 class="mb-4">Company</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2 p-0">
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>About</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Careers</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Blog</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Press</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Gift Cards</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Magazine</li>
+        </ul>
+      </div>
+
+      <div class="support col-lg-3 col-md-6 col-12 d-flex flex-column">
+        <h5 class="mb-4">Support</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2 p-0">
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Contact</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Legal Contact</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Privacy Policy</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Terms and Conditions</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Sitemap</li>
+          <li class="d-flex align-items-center"><i class="fas fa-angle-right me-2"></i>Cookie policy</li>
+        </ul>
+      </div>
+
+      <div class="payment col-lg-3 col-md-6 col-12 d-flex flex-column gap-3">
+        <div class="language-currency d-flex gap-2">
+          <div class="custom-select-wrapper w-50">
+            <label for="lang-select" class="select-label">Language</label>
+            <select id="lang-select" class="form-select custom-select">
+              <option value="ar" selected>Arabic</option>
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+          </div>
+          <div class="custom-select-wrapper w-50">
+            <label for="curr-select" class="select-label">$</label>
+            <select id="curr-select" class="form-select custom-select">
+              <option value="usd" selected>USD</option>
+              <option value="eur">EUR</option>
+              <option value="inr">INR</option>
+              <option value="gbp">GBP</option>
+            </select>
+          </div>
+        </div>
+
+        <h5>Payment</h5>
+        <p class="payments-options d-flex gap-2">
+          <i class="fab fa-cc-amex fs-4"></i>
+          <i class="fab fa-cc-visa fs-4"></i>
+          <i class="fas fa-credit-card fs-4"></i>
+          <i class="fab fa-cc-mastercard fs-4"></i>
+          <i class="fab fa-cc-paypal fs-4"></i>
+          <i class="fab fa-cc-discover fs-4"></i>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+      <div class=" footer-credit d-flex justify-content-center gap-4 py-4">
+      <span class=" text-secondary"> <i class="fa fas fa-copyright"></i>Your Site Name, All right reserved.
+        </span>
+<span class=" text-secondary"> Designed By <a href="#"> HTML Codex</a> Distributed By <a href="#">ThemeWagon</a> </span>
+      </div>
+
+
+    </footer>
+
+   <script src="bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script></body>
+</html>
