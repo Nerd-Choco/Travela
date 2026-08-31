@@ -1,13 +1,16 @@
 /* ==========================================================================
-   DEFAULT STYLES (Desktop / Large Screens)
+   DEFAULT STYLES (Desktop / Large Screens & CSS Variables)
    ========================================================================== */
 
+/* Universal Reset & Base Font Setup */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: var(--bs-font-sans-serif);
 }
 
+/* Global CSS Custom Properties (Variables) */
 :root {
   --bs-blue: #0d6efd;
   --bs-cyan: #0dcaf0;
@@ -23,20 +26,28 @@
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Layout Container Override */
 .container {
   padding: 48px 12px !important;
 }
 
+/* Global Anchor Styling */
 a {
   color: var(--bs-white) !important;
 }
 
+/* ==========================================================================
+   BUTTONS & UI COMPONENTS
+   ========================================================================== */
+
+/* Theme Button Base (Uses box-shadow slide animation) */
 .theme-btn {
   color: var(--bs-white);
   box-shadow: inset -500px 0 0 0px var(--bs-primary);
   transition: all 1s;
 }
 
+/* Theme Button Hover State */
 .theme-btn:hover {
   color: var(--bs-dark) !important;
   box-shadow: inset 0 0 0 1px var(--bs-white);
@@ -44,11 +55,13 @@ a {
   border: 1px solid var(--bs-primary);
 }
 
+/* Section Title Decorative Headers */
 .section-title {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--bs-primary);
 }
 
+/* Decorative side lines for section titles */
 .section-title::before,
 .section-title::after {
   content: "";
@@ -58,6 +71,7 @@ a {
   background-color: var(--bs-primary);
 }
 
+/* Custom Arrow List Component */
 .arrow-list {
   list-style-type: "➔ " !important;
 }
@@ -66,6 +80,7 @@ a {
   color: var(--bs-primary) !important;
 }
 
+/* Top Login Utility Bar */
 .login-bar {
   background-color: var(--bs-primary);
   padding: 0px 48px;
@@ -77,91 +92,96 @@ a {
   transition: all 0.5s;
 }
 
- .navbar {
-    background-color: white ;
+/* ==========================================================================
+   NAVIGATION BAR & DROPDOWNS (Base / Mobile-first defaults)
+   ========================================================================== */
+
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid var(--bs-gray);
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  margin-top: 0 !important;
+}
+
+.navbar-brand {
+  color: #081e54 !important;
+}
+
+.nav-item > a {
+  color: #081e54 !important;
+}
+
+.nav-item:hover > a {
+  color: white !important;
+}
+
+.nav-item {
+  padding: 4px 4px;
+}
+
+.dropdown-menu a {
+  color: #0a255b !important;
+}
+
+.nav-dropdown-menu .nav-dropdown-item:hover {
+  color: white !important;
+  background-color: var(--bs-primary) !important;
+}
+
+/* Desktop Navbar Styles (992px and up) */
+@media (min-width: 992px) {
+  /* Navbar transparent fixed state at top */
+  .navbar {
+    background-color: transparent; 
     border-bottom: 1px solid var(--bs-gray);
     position: fixed;
-    z-index: 10;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     width: 100%;
-    margin-top: 0 !important;
-  }
-   .navbar-brand
-   {
-    color: #081e54 !important;
-   }
-  .nav-item>a {
-    color: #081e54 !important;
+    margin-top: 45px !important;
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
   }
 
-  .nav-item:hover>a {
-    color: white !important;
+  /* Base Brand & Nav Links color when transparent */
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+    color: var(--bs-white) !important;
+    transition: color 0.4s ease;
+  }
+
+  /* Sticky/Scrolled Navbar State (Toggled via JS/jQuery) */
+  .navbar.scrolled {
+    background-color: #ffffff !important;
+    border-bottom-color: transparent;
+    margin-top: 0 !important;
+    transition: all 0.5s;
+  }
+
+  .navbar.scrolled .nav-item:hover > .nav-link {
+    color: var(--bs-white) !important;
   }
 
   .nav-item {
-    padding: 4px 4px;
+    position: relative;
+    z-index: 1;
+    padding: 25px 15px !important;
   }
 
-  .dropdown-menu a {
-    color: #0a255b !important;
+  .scrolled .nav-item {
+    padding: 10px 15px !important;
   }
-
-  .nav-dropdown-menu .nav-dropdown-item:hover {
-    color: white !important;
-    background-color: var(--bs-primary) !important;
-  }
-
-  
-@media (min-width: 992px) {
- .navbar{
-background-color: transparent; 
-  border-bottom: 1px solid var(--bs-gray);
-  position: fixed;
-  top:0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-margin-top: 45px !important;
-  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Base Brand & Nav Links color at top */
-.navbar .navbar-brand,
-.navbar .nav-link {
-  color: var(--bs-white) !important;
-  transition: color 0.4s ease;
-}
-
-/* 2. Scrolled Navbar State (Toggled via jQuery) */
-.navbar.scrolled {
-  background-color: #ffffff !important;
-  border-bottom-color: transparent;
-  margin-top: 0 !important;
-  transition: all 0.5s;
-}
-.navbar.scrolled .nav-item:hover > .nav-link {
-  color: var(--bs-white) !important;
-}
-.nav-item {
-  position: relative;
-  z-index: 1;
-  padding: 25px 15px !important;
-}
-.scrolled .nav-item
-{
-  padding: 10px 15px !important;
-}
-}
-
-/* Darken brand logo & links when background becomes white */
+/* Darken brand logo & links when navbar gets white scrolled background */
 .navbar.scrolled .navbar-brand,
 .navbar.scrolled .nav-link {
   color: #081e54 !important;
 }
 
-/* Keep hover state text contrast sharp when scrolled */
-
-
-/* Fix for top global selector overriding link colors */
+/* Dropdown Menu Animations & States */
 .navbar .nav-dropdown-menu a {
   color: #0a255b !important;
 }
@@ -170,19 +190,17 @@ margin-top: 45px !important;
   display: none;
   visibility: hidden;
   opacity: 0;
-
   transform: translateY(15px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   pointer-events: none;
 }
 
-/* Hover state */
+/* Show dropdown menu on parent hover */
 .nav-dropdown:hover .nav-dropdown-menu {
- display: block;
+  display: block;
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
-
   pointer-events: auto;
 }
 
@@ -196,6 +214,7 @@ margin-top: 45px !important;
   color: #0a255b !important;
 }
 
+/* Animated Underline/Background fill effect on Nav Links */
 .nav-item {
   position: relative;
   z-index: 1;
@@ -221,10 +240,15 @@ margin-top: 45px !important;
   padding: 2px 10px;
 }
 
+/* ==========================================================================
+   HERO / HEADER & CAROUSEL SECTION
+   ========================================================================== */
+
 header {
   position: relative;
 }
 
+/* Centered Banner Caption Box */
 .caption {
   background-color: #14141698;
   color: var(--bs-white);
@@ -236,15 +260,17 @@ header {
   padding: 5rem;
   transform: translate(-50%, -50%);
 }
-.caption-title
-{
+
+.caption-title {
   font-size: 3rem;
   font-weight: 700;
 }
+
 .carousel-item {
   position: relative;
 }
 
+/* Overlapping Search Card */
 .search-card {
   background-color: #0c285ed8;
   position: relative;
@@ -252,148 +278,7 @@ header {
   transform: translateY(-50%);
 }
 
-.about-visual img {
-  width: 100%;
-  height: 100%;
-  border: 40px solid var(--bs-primary);
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid transparent;
-}
-
-.about-text::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: " ";
-  width: 100%;
-  height: 100%;
-  background: url(../images/about-img-1.png);
-  opacity: 0.2;
-  z-index: -10;
-}
-
-.about-us-text {
-  color: var(--bs-primary);
-  position: relative;
-}
-
-.about-us-text::before {
-  content: " ";
-  position: absolute;
-  width: 10%;
-  bottom: 50%;
-  right: 70%;
-  transform: translateY(-50%);
-  background-color: var(--bs-primary);
-  height: 1.5px;
-  z-index: -1;
-}
-
-.travela {
-  color: var(--bs-primary);
-}
-
-.service-card {
-  background-color: var(--bs-light);
-  border: 1px solid var(--bs-primary);
-  transition: all 1s;
-}
-
-.service-card:hover {
-  background-color: var(--bs-primary);
-  color: var(--bs-white);
-}
-
-.service-card:hover .card-icon {
-  color: var(--bs-white);
-}
-
-.card-icon {
-  font-size: 5rem;
-  color: var(--bs-primary);
-  transition: all 1s;
-}
-
-.card img {
-  transition: all 0.6s;
-}
-
-.card-layer {
-  background-color: #0f295e74;
-  opacity: 0;
-  transition: all 0.6s;
-}
-
-.destination-card .layer-content,
-.gallery-cards .layer-content {
-  transform: translateY(150%);
-  transition: all 1s;
-}
-
-.card:hover .card-layer {
-  opacity: 1;
-}
-
-.card:hover .layer-content {
-  transform: translateY(0%);
-}
-
-.card:hover img {
-  transform: scale(1.2);
-}
-
-/* Default Desktop Grid Rules */
-.destination-cards,
-.tour-cards,
-.gallery-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.destination-card {
-  height: 100%;
-}
-
-.destination-card.tall-card {
-  grid-column: 3;
-  grid-row: span 2;
-  height: fit-content;
-}
-
-#filter-usa:checked~.destination-cards .destination-card:not(.filter-usa),
-#filter-canada:checked~.destination-cards .destination-card:not(.filter-canada),
-#filter-europe:checked~.destination-cards .destination-card:not(.filter-europe),
-#filter-china:checked~.destination-cards .destination-card:not(.filter-china),
-#filter-singapore:checked~.destination-cards .destination-card:not(.filter-singapore),
-#filter-national:checked~.tour-gallary .tour-category:not(.filter-national),
-#filter-international:checked~.tour-gallary .tour-category:not(.filter-international),
-#world-filter:checked ~ .gallery-cards .filter-card:not(.world-filter),
-#ocean-filter:checked ~ .gallery-cards .filter-card:not(.ocean-filter),
-#summer-filter:checked ~ .gallery-cards .filter-card:not(.summer-filter),
-#sport-filter:checked ~ .gallery-cards .filter-card:not(.sport-filter) {
-  display: none !important;
-}
-
-#filter-all:checked~.filter-buttons label[for="filter-all"],
-#filter-usa:checked~.filter-buttons label[for="filter-usa"],
-#filter-canada:checked~.filter-buttons label[for="filter-canada"],
-#filter-europe:checked~.filter-buttons label[for="filter-europe"],
-#filter-china:checked~.filter-buttons label[for="filter-china"],
-#filter-singapore:checked~.filter-buttons label[for="filter-singapore"],
-#filter-national:checked~.filter-buttons label[for="filter-national"],
-#filter-international:checked~.filter-buttons label[for="filter-international"],
-#all:checked~.filter-buttons label[for="all"],
-#world-filter:checked~.filter-buttons label[for="world-filter"],
-#ocean-filter:checked~.filter-buttons label[for="ocean-filter"],
-#summer-filter:checked~.filter-buttons label[for="summer-filter"],
-#sport-filter:checked~.filter-buttons label[for="sport-filter"] {
-  background-color: var(--bs-light) !important;
-  color: var(--bs-primary);
-  border: 1px solid var(--bs-primary);
-  box-shadow: none;
-}
-
+/* Custom Carousel Indicator Dots */
 .carousel-indicators [data-bs-target] {
   border: none;
   opacity: 1;
@@ -422,6 +307,175 @@ header {
   border: 1px solid #1a3b8b;
 }
 
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+
+/* Frame border effect around about section image */
+.about-visual img {
+  width: 100%;
+  height: 100%;
+  border: 40px solid var(--bs-primary);
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
+/* Subtle background image overlay for text side */
+.about-text::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  background: url(../images/about-img-1.png);
+  opacity: 0.2;
+  z-index: -10;
+}
+
+.about-us-text {
+  color: var(--bs-primary);
+  position: relative;
+}
+
+/* Decorative line accent */
+.about-us-text::before {
+  content: " ";
+  position: absolute;
+  width: 10%;
+  bottom: 50%;
+  right: 70%;
+  transform: translateY(-50%);
+  background-color: var(--bs-primary);
+  height: 1.5px;
+  z-index: -1;
+}
+
+.travela {
+  color: var(--bs-primary);
+}
+
+/* ==========================================================================
+   SERVICES & CARDS
+   ========================================================================== */
+
+.service-card {
+  background-color: var(--bs-light);
+  border: 1px solid var(--bs-primary);
+  transition: all 1s;
+}
+
+.service-card:hover {
+  background-color: var(--bs-primary);
+  color: var(--bs-white);
+}
+
+.service-card:hover .card-icon {
+  color: var(--bs-white);
+}
+
+.card-icon {
+  font-size: 5rem;
+  color: var(--bs-primary);
+  transition: all 1s;
+}
+
+/* Card Hover Layer & Image Zoom Effect */
+.card img {
+  transition: all 0.6s;
+}
+
+.card-layer {
+  background-color: #0f295e74;
+  opacity: 0;
+  transition: all 0.6s;
+}
+
+.destination-card .layer-content,
+.gallery-cards .layer-content {
+  transform: translateY(150%);
+  transition: all 1s;
+}
+
+.card:hover .card-layer {
+  opacity: 1;
+}
+
+.card:hover .layer-content {
+  transform: translateY(0%);
+}
+
+.card:hover img {
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   GRID LAYOUTS & CATEGORY FILTERING (CSS Radio-Button Filter)
+   ========================================================================== */
+
+/* Default Desktop Grid Rules */
+.destination-cards,
+.tour-cards,
+.gallery-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-cards {
+  grid-template-columns: 1fr;
+}
+
+.destination-card {
+  height: 100%;
+}
+
+/* Span featured card across 2 rows on desktop */
+.destination-card.tall-card {
+  grid-column: 3;
+  grid-row: span 2;
+  height: fit-content;
+}
+
+/* CSS-only Filtering logic: Hides non-selected categories based on checked radio buttons */
+#filter-usa:checked~.destination-cards .destination-card:not(.filter-usa),
+#filter-canada:checked~.destination-cards .destination-card:not(.filter-canada),
+#filter-europe:checked~.destination-cards .destination-card:not(.filter-europe),
+#filter-china:checked~.destination-cards .destination-card:not(.filter-china),
+#filter-singapore:checked~.destination-cards .destination-card:not(.filter-singapore),
+#filter-national:checked~.tour-gallary .tour-category:not(.filter-national),
+#filter-international:checked~.tour-gallary .tour-category:not(.filter-international),
+#world-filter:checked ~ .gallery-cards .filter-card:not(.world-filter),
+#ocean-filter:checked ~ .gallery-cards .filter-card:not(.ocean-filter),
+#summer-filter:checked ~ .gallery-cards .filter-card:not(.summer-filter),
+#sport-filter:checked ~ .gallery-cards .filter-card:not(.sport-filter) {
+  display: none !important;
+}
+
+/* Active tab styling for selected filter buttons */
+#filter-all:checked~.filter-buttons label[for="filter-all"],
+#filter-usa:checked~.filter-buttons label[for="filter-usa"],
+#filter-canada:checked~.filter-buttons label[for="filter-canada"],
+#filter-europe:checked~.filter-buttons label[for="filter-europe"],
+#filter-china:checked~.filter-buttons label[for="filter-china"],
+#filter-singapore:checked~.filter-buttons label[for="filter-singapore"],
+#filter-national:checked~.filter-buttons label[for="filter-national"],
+#filter-international:checked~.filter-buttons label[for="filter-international"],
+#all:checked~.filter-buttons label[for="all"],
+#world-filter:checked~.filter-buttons label[for="world-filter"],
+#ocean-filter:checked~.filter-buttons label[for="ocean-filter"],
+#summer-filter:checked~.filter-buttons label[for="summer-filter"],
+#sport-filter:checked~.filter-buttons label[for="sport-filter"] {
+  background-color: var(--bs-light) !important;
+  color: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   PACKAGES & TOUR DETAILS
+   ========================================================================== */
+
 .info {
   background-color: #14161f7a;
   text-align: center;
@@ -443,6 +497,7 @@ header {
   background-color: var(--bs-primary);
 }
 
+/* Expanding circle background hover effect */
 .package-card-layer {
   top: 50%;
   left: 50%;
@@ -473,14 +528,15 @@ header {
   font-size: 4rem;
 }
 
- .gallery-cards {
-    grid-template-columns: 1fr;
-  }
+/* ==========================================================================
+   BOOKING SECTION
+   ========================================================================== */
 
 .booking {
   background-color: #102861d7;
 }
 
+/* Parallax fixed background for booking section */
 .booking::before {
   content: "";
   position: absolute;
@@ -508,10 +564,15 @@ header {
   color: var(--bs-yellow);
 }
 
+/* ==========================================================================
+   TOUR GUIDES / TEAM SECTION
+   ========================================================================== */
+
 .guide-card {
   background-color: var(--bs-light);
 }
 
+/* Image dark overlay on hover */
 .guide-card .image-wrapper::after {
   content: " ";
   position: absolute;
@@ -524,6 +585,7 @@ header {
   transition: all 1s;
 }
 
+/* Card body slide-up background fill on hover */
 .guide-card .card-body::before {
   position: absolute;
   content: " ";
@@ -554,6 +616,18 @@ header {
   color: white;
 }
 
+/* Floating Social Media Buttons */
+.social-icons {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--bs-primary);
+  background: var(--bs-light);
+  z-index: 10;
+}
+
 .icon {
   width: 30px;
   height: 30px;
@@ -573,17 +647,6 @@ header {
   color: var(--bs-primary);
 }
 
-.social-icons {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  border: 1px solid var(--bs-primary);
-  background: var(--bs-light);
-  z-index: 10;
-}
-
 .guide-card .card-title,
 .card-text {
   z-index: 10;
@@ -592,6 +655,10 @@ header {
 .blog-icon {
   color: var(--bs-primary);
 }
+
+/* ==========================================================================
+   TESTIMONIALS SECTION
+   ========================================================================== */
 
 .testimonial-card {
   text-align: center;
@@ -605,6 +672,7 @@ header {
   padding-bottom: 50px !important;
 }
 
+/* Active card highlight state for slider/carousel */
 .active .card-body-custom {
   background-color: #0a255b !important;
   transition: all 0.5s;
@@ -634,6 +702,11 @@ header {
   border-color: var(--bs-primary);
 }
 
+/* ==========================================================================
+   CONTACT & SUBSCRIBE SECTION
+   ========================================================================== */
+
+/* Fixed background for contact section */
 .contact::before {
   content: "";
   position: absolute;
@@ -654,11 +727,16 @@ header {
   background-color: white !important;
 }
 
+/* ==========================================================================
+   FOOTER SECTION & UTILITIES
+   ========================================================================== */
+
 footer {
   color: white;
   background: var(--bs-dark);
 }
 
+/* Custom Dropdown Select Component */
 .custom-select-wrapper {
   position: relative;
   width: 120px;
@@ -697,60 +775,63 @@ footer {
 .footer-credit {
   border-top: 1px solid var(--bs-gray);
 }
-footer li, footer i {
+
+footer li, 
+footer i {
   transition: all 0.5s;
 }
-footer li:hover
-{
-color: #0d6efd;
-cursor: pointer;
-letter-spacing: 2px;
+
+/* Footer Link Hover Animations */
+footer li:hover {
+  color: #0d6efd;
+  cursor: pointer;
+  letter-spacing: 2px;
 }
-.payments-options i:hover
-{
+
+.payments-options i:hover {
   cursor: pointer;
   letter-spacing: 8px;
   transition: all 0.5s;
 }
-.error404 
-{
+
+/* Error Page Utility */
+.error404 {
   background-color: #b8c2da;
 }
+
 /* ==========================================================================
    MOBILE & TABLET RESPONSIVE OVERRIDES
    ========================================================================== */
 
 /* Tablet & Mobile Screens (Under 991px) */
 @media (max-width: 991px) {
-
+  /* Switch 3-column grid layouts to 2-columns */
   .destination-cards,
   .tour-cards {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Reset tall featured card on tablet screens */
   .destination-card.tall-card {
     grid-column: auto;
     grid-row: auto;
   }
   
-  .caption
-  {
-    padding: 100px 50px ;
+  .caption {
+    padding: 100px 50px;
   }
 }
 
 /* Phones & Small Mobile Screens (Under 767px) */
 @media (max-width: 767px) {
-
+  /* Collapse grids to single-column layout */
   .destination-cards,
   .tour-cards,
   .gallery-cards {
     grid-template-columns: 1fr;
   }
 
-  
-  .caption
-  {
-    padding: 100px 50px ;
+  .caption {
+    padding: 100px 50px;
   }
 }
